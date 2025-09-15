@@ -1,0 +1,44 @@
+﻿<Page x:Class="salon.Pages.EditService"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:salon.Pages"
+     mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditService">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <TextBlock Text="Название:"/>
+            <TextBox Name="tbTitle" Text="{Binding Title}"/>
+
+            <TextBlock Text="Цена:"/>
+            <TextBox Name="tbCost" Text="{Binding Cost}"/>
+
+            <TextBlock Text="Длительность (в секундах):"/>
+            <TextBox Name="tbDuration" Text="{Binding DurationInSeconds}"/>
+
+            <TextBlock Text="Скидка:"/>
+            <TextBox Name="tbDiscount" Text="{Binding Discount}"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Border BorderBrush="Black" BorderThickness="1">
+                    <Image x:Name="img" Width="100" Height="100" Source="{Binding ImgPath}"/>
+                </Border>
+                <Button x:Name="btnEnterImage" Content="Выбрать фото" Click="btnEnterImage_Click"/>
+            </StackPanel>
+
+            <TextBlock Text="Описание:"/>
+            <TextBox Name="tbDescription" Text="{Binding Description}"/>
+
+            <Button x:Name="btnSave" Content="Сохранить" Click="btnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
